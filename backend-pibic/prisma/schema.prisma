@@ -1,0 +1,72 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// prisma/schema.prisma
+datasource db {
+  provider  = "postgresql"
+  url  	    = env("DATABASE_URL")
+<<<<<<< HEAD
+=======
+//  directUrl = env("DIRECT_URL")
+>>>>>>> fbb6f778f99ba846ba8e44807435b4cb80a81c5c
+}
+
+
+model Administrador {
+  id        String    @id @default(uuid())
+  nome      String
+  email     String
+  senha     String
+}
+
+model Aluno {
+  id                      String   @id @default(uuid())
+  email                   String
+  nomeCompletoOrientador  String
+  titulacao               String
+  matricula               String
+  cpfOrientador           String
+  cursoOrientador         String
+  telefoneOrientador      String
+  tituloProjeto           String
+  areaConhecimentoCNPQ    String
+  nomeGrupoPesquisa       String
+  nomeAluno               String
+  registroAcademico       String
+  indicacao               String
+  condicaoFinal           String
+  tituloPlanoTrabalho     String
+  emailInstitucionalAluno String
+  enderecoCompleto        String
+  cpfAluno                String
+  rgAluno                 String
+  dataNascAluno           String
+  telefoneAluno           String
+  linkLattes              String
+  obs1                    String
+  createdAt               DateTime @default(now())
+  updatedAt               DateTime @updatedAt
+}
+
+model Professor {
+  id        String               @id @default(uuid())
+  nome      String
+  email     String
+  matricula String
+  curso     String
+  
+  
+}
+
+model Projeto {
+  id               String               @id @default(uuid())
+  titulo           String
+  areaConhecimento String
+  escola           String
+  status           Boolean
+  
+}
